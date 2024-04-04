@@ -4,31 +4,49 @@
 
 The project is a deep learning work that focuses on conducting sentiment analysis on Airbnb reviews to extract valuable insights regarding guest sentiments and experiences. Sentiment analysis, a branch of natural language processing, enables the classification of text data into positive, negative, or neutral sentiments. Leveraging advanced deep learning techniques, the project aims to uncover nuanced sentiment patterns within the reviews, offering deeper insights into customer sentiments and preferences
 
-## Exploratory Data Analysis (EDA):
+## Project Steps
+
+### Requirements:
+
+To run this project successfully, please ensure you have the following dependencies installed:
+
+```
+pip install -r requirements.txt
+```
+
+And before running the code, make sure to also download NLTK resources:
+
+```bash
+python -m nltk.downloader stopwords
+python -m nltk.downloader punkt
+```
+
+### Instructions for Dataset Access:
+To get started, please download the Airbnb reviews dataset available at [Kaggle](https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset) and save it to your local machine. Once downloaded, upload the dataset to your notebook environment using the following code:
+
+```
+df_reviews = pd.read_csv("path_to_your_downloaded_dataset/reviews.csv")
+```
+
+### Exploratory Data Analysis (EDA):
 The project commences with an in-depth exploratory data analysis (EDA) of the Airbnb reviews dataset. Through statistical analyses and visualizations, the EDA phase aims to uncover patterns, distributions, and common themes within the reviews.
 
-## Word2Vec Embedding:
+### Word2Vec Embedding:
 Following the EDA, the project employs Word2Vec embedding to represent words in a continuous vector space. Word2Vec facilitates capturing semantic relationships between words, thereby enhancing the understanding of contextual similarities and differences.
 
-## Clustering (KMeans) for Unlabeled Data:
+### Clustering (KMeans) for Unlabeled Data:
 Given the absence of labeled sentiment data in the dataset, the project utilizes clustering techniques, specifically KMeans clustering, to group similar reviews together based on their semantic similarities. Clustering enables the identification of distinct clusters within the unlabeled dataset, providing a foundation for subsequent sentiment analysis.
 
-## Sentiment Analysis with Sentiment Intensity Analyzer (SIA):
+### Sentiment Analysis with Sentiment Intensity Analyzer (SIA):
 In addition to Word2Vec embedding and clustering, the project incorporates sentiment analysis using the Sentiment Intensity Analyzer (SIA). SIA quantifies sentiment expression within each cluster, assigning sentiment scores to individual reviews and computing an overall sentiment score for the cluster.
 
-## Interpreting the Results:
+### Interpreting the Results:
+
 The numbers represent the average sentiment score for each cluster, both for the training and test datasets. The sentiment score ranges from -1 to 1, where:
 
 A score close to 1 indicates a highly positive sentiment.
 A score close to -1 indicates a highly negative sentiment.
 A score around 0 indicates a neutral sentiment.
-Here's the breakdown of the results:
-
-Cluster 0: This cluster has a high average sentiment score, indicating that the sentences within this cluster are predominantly positive in sentiment. Both the training and test datasets show similar sentiment scores, indicating consistency.
-Cluster 1: Similar to Cluster 0, this cluster also has a high average sentiment score, indicating predominantly positive sentiment. The sentiment scores for both the training and test datasets are close, suggesting consistency.
-Cluster 2: This cluster has a relatively low average sentiment score, closer to 0. This indicates that the sentences within this cluster are neutral or mildly positive. Both the training and test datasets show similar sentiment scores.
-Cluster 3: The average sentiment score for this cluster is low, suggesting mildly negative sentiment. Both the training and test datasets have similar sentiment scores.
-Cluster 4: This cluster has the lowest average sentiment score among all clusters, indicating predominantly negative sentiment. Both the training and test datasets exhibit similarly low sentiment scores.
 
 In summary, by analyzing the average sentiment scores for each cluster, we can understand the overall sentiment tendencies within the clusters. This information can provide insights into the sentiment distribution across different segments of the data.
 
