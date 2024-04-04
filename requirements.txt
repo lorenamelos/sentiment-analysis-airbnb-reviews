@@ -1,0 +1,12 @@
+# requirements
+
+pandas
+numpy
+matplotlib
+seaborn
+gensim
+nltk
+scikit-learn
+tensorflow
+transformers
+
